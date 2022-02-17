@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #7bdaf3;
+    background-color: rgb(125, 243, 154);
     display: flex;
     flex-wrap: wrap;
     font-family: "Poppins", sans-serif;
