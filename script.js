@@ -20,6 +20,8 @@ function myNotes(){
     })
 
 }
+
+// CRUD FUCCTIONATO UPDATE 
 function updateNote(element) {  
     const noteTitle = document.querySelector('NoteTitle').value 
     const noteBody = document.querySelector('textarea').value
@@ -42,6 +44,9 @@ function updateNote(element) {
     })
 
 }
+
+// ---------------------CREATE IT-------------------------------------------
+// @@ FETCH FUNCTION RETURNS NULL
 function createNote(noteBody){
     fetch(url, {
         method: 'POST',
@@ -65,7 +70,7 @@ addBtn.addEventListener("click", () =>
 });
 
 
-
+///----------------------------- MORE CONSTSTANTS ---------------------------------
 const main = note.querySelector(".main");
 const Notetitle= note.querySelector("Notetitle")
 const textArea = note.querySelector("textarea");
@@ -74,13 +79,15 @@ textArea.value = text;
 main.innerHTML = marked(text);
 
 
-
+//----------------AM I DOING THIS RIGHT?? IDK I've HAD WAY TO MANY MONSTERS---------------------------
 
 function deleteNote(element){
     const todoId = element.parentElement.id
+    // problems initalizing json server
     fetch(`http://localhost:3000/todos/${todoId}`, {
       method: 'DELETE',
     }).then(function () {
+    
         deleteBtn.addEventListener("click", () => {
             const deleteBtn = note.querySelector(".delete");
         
@@ -122,7 +129,8 @@ textArea.addEventListener("input", (e) => {
     updateLS();
 });
 
-
+// UNsure how to use fetch function to create element and post to url
+// used fucntion to create element and display html
 function addNewNote(text = "") {
     const note = document.createElement("div");
     note.classList.add("note");
@@ -156,3 +164,7 @@ function updateLS() {
 
     localStorage.setItem("notes", JSON.stringify(notes));
 }
+
+
+// NEED TO ADD HTTP REQUEST
+// CRUD IS CRUD LOL
